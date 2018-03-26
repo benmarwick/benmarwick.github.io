@@ -1,8 +1,6 @@
 language: r
 cache: packages
-branches:
-    only:
-        - source
+
 r_github_packages:
     - rstudio/blogdown
 
@@ -12,11 +10,4 @@ before_script:
 script:
     - Rscript -e 'blogdown::build_site()'
 
-deploy:
-    provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_PAT
-    on:
-        branch: source
-    local_dir: public
-    target_branch: master
+
